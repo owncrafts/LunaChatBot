@@ -50,20 +50,25 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, "cancel")
 
 
-@luna.on_message(filters.command("repo") & ~filters.edited)
+@luna.on_message(filters.command("about") & ~filters.edited)
 async def repo(_, message):
     await message.reply_text(
-        "[GitHub](https://github.com/thehamkercat/LunaChatBot)"
-        + " | [Group](t.me/PatheticProgrammers)",
-        disable_web_page_preview=True,
+        "**🔰 Developer information**\n\n**Name** : `Dhruv`\n**Full name** : `Dhruv Lathia`\n**Age** : `17`\n**Birthdate** : `30/04/2005`\n**Birthplace** : `India - Gujarat`\n**Education** : `Diploma Computer Engineering`\n**College** : `B & B Institute of Technology`\n**Instagram** : instagram.com/dhruv_lathia\n\n**Contact him for more info ⤵️**\n🔰 PM allowed - @dhruv_lathia 😇\n\nSend /community if you want to visit our all communities",
+       disable_web_page_preview=True,
     )
+
+@luna.on_message(filters.command("community") & ~filters.edited)
+async def start(_, message):
+    await luna.send_chat_action(message.chat.id, "typing")
+    await sleep(2)
+    await message.reply_text("**🔰 Join our all communities**\n\n⬛️ Our all channels\n\n▫️ @CAPvsIRONMAN\n▫️ @DCvsMARVELchannel\n▫️ @Alpha_91\n\n⬛️ Our all groups\n\n▫️ @Movies_84\n▫️ @Moviesline_Official\n▫️ @Offtopic_Time\n⬛️ Our all Bots\n\n▫️ @MarvelCollectorBot\n▫️ @EmirichuBot\n▫️ @Levi_Chatbot\n▫️ @MovieslineBot\n▫️ @Buyads_Bot\n▫️ @Paidpromoz_Bot\n⬛️ Our all Websites\n\n▫️ www.filmmagik.rf.gd\n▫️ www.cyberer.xyz\n▫️ Special one coming soon...")
 
 
 @luna.on_message(filters.command("help") & ~filters.edited)
 async def start(_, message):
     await luna.send_chat_action(message.chat.id, "typing")
     await sleep(2)
-    await message.reply_text("/repo - Get Repo Link")
+    await message.reply_text("Hello, I am Emirichu. A User-friendly Chatbot. You can spend time on me & You can be my friend. My father is @dhruv_lathia, A person who coded me.")  
 
 
 @luna.on_message(
